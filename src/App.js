@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css'; 
 import {Header, Body, Footer} from './testComp';
+import Test from './testComp';
 
 function App() {
   const head= "hello everybody header";
@@ -26,6 +27,7 @@ function App() {
         <Header title={head}/>
         <Body name={bod}/>
         <Footer name={foot}/>
+        <Test name="testing" />
       </header>
     </div>
   );
