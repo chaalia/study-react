@@ -1,7 +1,13 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.css'; 
+import {Header, Body, Footer} from './testComp';
 
 function App() {
+  const head= "hello everybody header";
+  const bod= "hello everybody body";
+  const foot= "hello everybody footer";
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +23,9 @@ function App() {
         >
           Learn React
         </a>
+        <Header title={head}/>
+        <Body name={bod}/>
+        <Footer name={foot}/>
       </header>
     </div>
   );
