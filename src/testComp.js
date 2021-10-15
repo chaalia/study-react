@@ -1,18 +1,24 @@
 import React from "react"
 
 export const Header = (props) => {
+    const state = {
+        value: "Dima"
+    }
     return (
         <div>
-            {props.title}
+            {props.title} and the state {state.value}
         </div>
     )
 }
 
 
 export const Footer = (props) => {
+    const state = {
+        val: "Hey"
+    }
     return (
         <div>
-            {props.name}
+            {props.name} and the state is {state.val}
         </div>
     )
 }
