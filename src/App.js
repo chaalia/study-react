@@ -2,11 +2,15 @@ import logo from './logo.svg';
 import './App.css'; 
 import {Header, Body, Footer} from './testComp';
 import Test from './testComp';
+import React from 'react';
 
-function App() {
+export default function App() {
   const head= "hello everybody header";
   const bod= "hello everybody body";
   const foot= "hello everybody footer";
+  const state = {
+    parent: "App component"
+  }
 
 
   return (
@@ -28,9 +32,20 @@ function App() {
         <Body name={bod}/>
         <Footer name={foot}/>
         <Test name="testing" />
+        <Child name="Rjab" value={bod} states={this.state.parent}/>
+        {state.parent}
       </header>
     </div>
   );
 }
 
-export default App;
+class Child extends React.Component{
+
+  render(){
+    return (
+      <div>
+        this is a child Component and the props is {this.props.name}
+      </div>
+    )
+  }
+}
