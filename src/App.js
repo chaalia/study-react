@@ -12,6 +12,13 @@ export default function App() {
     parent: "App component"
   }
 
+  const handleClick = () => {
+    console.log("clicked");
+  }
+
+  const handleMouse = () =>{
+    console.log("Mouse clicked")
+  }
 
   return (
     <div className="App">
@@ -28,12 +35,17 @@ export default function App() {
         >
           Learn React
         </a>
-        <Header title={head}/>
+        {/* <Header title={head}/>
         <Body name={bod}/>
-        <Footer name={foot}/>
+        <Footer name={foot}/> */}
         <Test name="testing" />
-        <Child name="Rjab" value={bod} states={this.state.parent}/>
-        {state.parent}
+        <Child name="Rjab" value={bod} state={state.parent}/>
+        <button onClick={handleClick}>
+          Click
+        </button>
+        <button onMouseMove={handleMouse}>
+          Move mouse
+        </button>
       </header>
     </div>
   );
