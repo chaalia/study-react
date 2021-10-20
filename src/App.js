@@ -2,14 +2,30 @@ import logo from './logo.svg';
 import './App.css'; 
 import {Header, Body, Footer} from './testComp';
 import Test from './testComp';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function App() {
   const head= "hello everybody header";
   const bod= "hello everybody body";
   const foot= "hello everybody footer";
-  const state = {
-    parent: "App component"
+  // const state = {
+  //   parent: "App component"
+  // }
+
+  // const state ={
+  //   name: 'Rjab',
+  //   age: 27
+  // }
+  const [student, setStudent] = useState({
+    name: 'Rjab',
+    age: 27
+  })
+
+  const studentChange = () => {
+    setStudent({
+      name: 'Mohamed',
+      age:'31'
+    })
   }
 
   const handleClick = () => {
@@ -39,14 +55,16 @@ export default function App() {
         <Body name={bod}/>
         <Footer name={foot}/> */}
         <Test name="testing" />
-        <Child name="Rjab" value={bod} state={state.parent}/>
+        {/* <Child name="Rjab" value={bod} state={state.parent}/> */}
         <button onClick={handleClick}>
           Click
         </button>
-        <button onMouseMove={handleMouse}>
-          Move mouse
-        </button>
+        <button onMouseMove={handleMouse}>Move mouse </button>
+        <button onClick={studentChange}>change state </button>
+        <p>the name is {student.name} and age {student.age}</p>
+
       </header>
+      console.log({student.name});
     </div>
   );
 }
