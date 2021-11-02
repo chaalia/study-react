@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css'; 
-import {Header, Body, Footer} from './testComp';
-import Test from './testComp';
+import {Header, Body, Footer} from './components/testComp';
+import Test from './components/testComp';
 import React, { useState } from 'react';
+import {Item} from './components/Item'
 
 export default function App() {
   const head= "hello everybody header";
@@ -17,9 +18,18 @@ export default function App() {
   //   age: 27
   // }
   const [student, setStudent] = useState({
+    id:1,
     name: 'Rjab',
     age: 27
   })
+  
+  const state = {
+    items : [
+      {num:1, subject:'reactjs', level:"A"},
+      {num:2, subject:'python', level:"B"},
+      {num:3, subject:'bash', level:"C"}
+    ]
+  }
 
   const studentChange = () => {
     setStudent({
@@ -62,8 +72,11 @@ export default function App() {
         <button onMouseMove={handleMouse}>Move mouse </button>
         <button onClick={studentChange}>change state </button>
         <p>the name is {student.name} and age {student.age}</p>
+        {/* <Item id='1' name='Rjab' age="27  "/> */}
+        <Item items={state.items} />
 
       </header>
+
       console.log({student.name});
     </div>
   );
