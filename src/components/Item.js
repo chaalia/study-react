@@ -3,10 +3,10 @@ export const Item = (props) => {
     // const {id, name, age} = props 
     // console.log(id)
     const items = props.items
-    const theItems = items.map( (item, key) => {
+    const theItems = items.map( (item) => {
         console.log(items);
         return (
-            <div className={key}>
+            <div key={item.id}>
                 <p>
                     {item.num},{item.subject},{item.level}
                 </p>

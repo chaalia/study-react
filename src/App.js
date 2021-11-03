@@ -45,14 +45,18 @@ export default function App() {
   const handleMouse = () =>{
     console.log("Mouse clicked")
   }
+  const handleChange = (e) => {
+    setStudent({name: e.target.value})
+  }
+  const handleSubmit = (e) => {
+      e.preventDefault()
+      console.log(student.name);
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -75,9 +79,17 @@ export default function App() {
         {/* <Item id='1' name='Rjab' age="27  "/> */}
         <Item items={state.items} />
 
+        <form onSubmit={handleSubmit}>
+          <div>Form part header </div>
+          <input type="text" onChange={handleChange}/>
+          <button type="submit">
+            Submit
+          </button>
+          {student.name}
+        </form>
+
       </header>
 
-      console.log({student.name});
     </div>
   );
 }
