@@ -81,7 +81,11 @@ export default function App() {
 
         <form onSubmit={handleSubmit}>
           <div>Form part header </div>
-          <input type="text" onChange={handleChange}/>
+          <select type="text" onChange={handleChange}>
+            <option value="value1"> value1 </option>
+            <option value="value2"> value2 </option>
+            <option value="value3"> value3 </option>
+          </select>
           <button type="submit">
             Submit
           </button>
